@@ -19,6 +19,12 @@ Note: In order to get correct flow control, `Pry.start` is overriden. Use at
 your own risk.
 
 
+## Contributing
+
+Patches and bug reports are welcome. Just send a [pull request][pullrequests] or
+file an [issue][issues]. [Project changelog][changelog].
+
+
 ## Acknowledgments
 
 - Ruby stdlib's [debug.rb][debug.rb]
@@ -30,8 +36,11 @@ your own risk.
 - Thread safety
 
 
-[pry]:         http://pry.github.com
-[debug.rb]:    https://github.com/ruby/ruby/blob/trunk/lib/debug.rb
-[Mon-Ouie]:    https://github.com/Mon-Ouie
-[pry_debug]:   https://github.com/Mon-Ouie/pry_debug
-[pry-remote]:  https://github.com/Mon-Ouie/pry-remote
+[pry]:          http://pry.github.com
+[pry-remote]:   https://github.com/Mon-Ouie/pry-remote
+[changelog]:    https://github.com/nixme/pry-nav/blob/master/CHANGELOG.md
+[issues]:       https://github.com/nixme/pry-nav/issues
+[pullrequests]: https://github.com/nixme/pry-nav/pulls
+[debug.rb]:     https://github.com/ruby/ruby/blob/trunk/lib/debug.rb
+[Mon-Ouie]:     https://github.com/Mon-Ouie
+[pry_debug]:    https://github.com/Mon-Ouie/pry_debug
