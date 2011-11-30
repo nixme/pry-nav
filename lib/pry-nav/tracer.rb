@@ -7,22 +7,31 @@ module PryNav
     def initialize(pry_start_options = {}, &block)
       @step_in_lines = -1                      # Break after this many lines
       @frames_when_stepping = nil              # Only break at this frame level
-      @frames = []                             # Traced stack frames
+      @frames = 0                              # Traced stack frame level
       @pry_start_options = pry_start_options   # Options to use for Pry.start
 
       run &block
     end
 
     def run(&block)
-      start    # Set the trace function
+      # For performance, disable any tracers while in the console.
+      # Unfortunately, only works in >= 1.9.3 because of
+      # http://redmine.ruby-lang.org/issues/3921
+      stop if RUBY_VERSION >= '1.9.3'
 
       return_value = nil
-      command = catch(:breakout_nav) do      # Coordinate with PryNav::Commands
+      command = catch(:breakout_nav) do      # Coordinates with PryNav::Commands
         return_value = yield
         {}    # Nothing thrown == no navigational command
       end
 
-      process_command command
+      # Adjust tracer based on command
+      if process_command(command)
+        start
+      else
+        stop unless RUBY_VERSION >= '1.9.3'
+        PryRemote::Server.stop if @pry_start_options[:pry_remote]
+      end
 
       return_value
     end
@@ -43,12 +52,13 @@ module PryNav
       when :step
         @step_in_lines = times
         @frames_when_stepping = nil
+        true
       when :next
         @step_in_lines = times
-        @frames_when_stepping = @frames.size
+        @frames_when_stepping = @frames
+        true
       else
-        stop
-        PryRemote::Server.stop if @pry_start_options[:pry_remote]
+        false
       end
     end
 
@@ -63,12 +73,12 @@ module PryNav
       when 'line'
         # Are we stepping? Or continuing by line ('next') and we're at the right
         # frame? Then decrement our line counter cause this line counts.
-        if !@frames_when_stepping || @frames.size == @frames_when_stepping
+        if !@frames_when_stepping || @frames == @frames_when_stepping
           @step_in_lines -= 1
           @step_in_lines = -1 if @step_in_lines < 0
 
         # Did we go up a frame and not break for a 'next' yet?
-        elsif @frames.size < @frames_when_stepping
+        elsif @frames < @frames_when_stepping
           @step_in_lines = 0   # Break right away
         end
 
@@ -76,10 +86,11 @@ module PryNav
         Pry.start(binding, @pry_start_options) if @step_in_lines == 0
 
       when 'call', 'class'
-        @frames.unshift [binding, file, line, id]   # Track entering a frame
+        @frames += 1         # Track entering a frame
 
       when 'return', 'end'
-        @frames.shift                          # Track leaving a stack frame
+        @frames -= 1         # Track leaving a stack frame
+        @frames = 0 if @frames < 0
       end
     end
   end
