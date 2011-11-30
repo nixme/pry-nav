@@ -3,10 +3,10 @@ pry-nav
 
 _Simple execution control in Pry_
 
-Adds **step** and **next** commands to your [Pry][pry]
+Adds **step**, **next**, and **continue** commands to your [Pry][pry]
 console. Makes for a simple but ghetto debugger.
 
-Note: In order to get the correct flow control, `Pry.start` is overriden. Use at
+Note: In order to get correct flow control, `Pry.start` is overriden. Use at
 your own risk.
 
 

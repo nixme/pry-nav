@@ -10,8 +10,13 @@ module PryNav
       breakout_navigation :next, lines
     end
 
+    command 'continue', 'Continue program execution and end the Pry session.' do
+      run 'exit-all'
+    end
+
     alias_command 'n', 'next'
     alias_command 's', 'step'
+    alias_command 'c', 'continue'
 
     helpers do
       def breakout_navigation(action, times)
