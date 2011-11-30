@@ -48,6 +48,7 @@ module PryNav
         @frames_when_stepping = @frames.size
       else
         stop
+        PryRemote::Server.stop if @pry_start_options[:pry_remote]
       end
     end
 
