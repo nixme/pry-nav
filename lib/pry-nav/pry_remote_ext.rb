@@ -13,6 +13,7 @@ module PryRemote
       uri = "druby://#{host}:#{port}"
 
       @client = PryRemote::Client.new
+      @started = true
       DRb.start_service uri, @client
 
       puts "[pry-remote] Waiting for client on #{uri}"
@@ -45,6 +46,8 @@ module PryRemote
     end
 
     def stop
+      return unless @started
+
       # Reset output streams
       $stdout = @old_stdout
       $stderr = @old_stderr
@@ -59,6 +62,7 @@ module PryRemote
       @client.kill
 
       DRb.stop_service
+      @started = false
     end
   end
 end
@@ -76,3 +80,11 @@ class Object
     }
   end
 end
+
+# Ensure cleanup when a program finishes without another break. For example,
+# 'next' on the last line of a program never hits the tracer proc, and thus
+# PryNav::Tracer#run doesn't have a chance to cleanup.
+END {
+  set_trace_func nil
+  PryRemote::Server.stop
+}

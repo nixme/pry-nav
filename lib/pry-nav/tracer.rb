@@ -2,8 +2,6 @@ require 'pry'
 
 module PryNav
   class Tracer
-    FILE = File.expand_path(__FILE__)
-
     def initialize(pry_start_options = {}, &block)
       @step_in_lines = -1                      # Break after this many lines
       @frames_when_stepping = nil              # Only break at this frame level
@@ -67,7 +65,7 @@ module PryNav
 
     def tracer(event, file, line, id, binding, klass)
       # Ignore traces inside pry-nav code
-      return if (file && File.expand_path(file) == FILE)
+      return if file && TRACE_IGNORE_FILES.include?(File.expand_path(file))
 
       case event
       when 'line'
