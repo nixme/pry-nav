@@ -6,6 +6,7 @@
   ends. Fixes [#1](https://github.com/nixme/pry-nav/issues/1).
 * **step** and **next** now check for a local file context. Prevents errors and
   infinite loops when called from outside `binding.pry`, e.g. `rails console`.
+* More resilient cleanup when [pry-remote][pry-remote] CLI disconnects.
 
 
 ## 0.0.2 (2011-11-30)

@@ -1,4 +1,5 @@
 require 'pry-remote'
+require 'drb'
 
 module PryRemote
 
@@ -58,11 +59,16 @@ module PryRemote
       # Reset system
       Pry.config.system = @old_system
 
-      puts "[pry-remote] Remote sesion terminated"
-      @client.kill
+      begin
+        @client.kill
+      rescue DRb::DRbConnError
+        # Ignore connection errors. The CLI client may have killed itself.
+      ensure
+        DRb.stop_service
+      end
 
-      DRb.stop_service
       @started = false
+      puts "[pry-remote] Remote sesion terminated"
     end
   end
 end
