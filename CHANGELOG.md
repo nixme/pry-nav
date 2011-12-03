@@ -1,5 +1,8 @@
 ## UNRELEASED
 
+* Performance improvement, primarily for 1.9.2: Don't trace unless in a file
+  context. `rails console` or standard `pry` shouldn't experience a slowdown
+  anymore.
 * The overriden `Pry.start` now returns the output of the original method, not a
   `PryNav::Tracer` instance.
 
