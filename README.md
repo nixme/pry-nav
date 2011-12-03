@@ -3,11 +3,22 @@ pry-nav
 
 _Simple execution control in Pry_
 
-Adds **step**, **next**, and **continue** commands to your [Pry][pry]
-console. Makes for a simple but ghetto debugger.
+Teaches [Pry][pry] about **step**, **next**, and **continue** to create a simple
+debugger.
 
-Rudimentary support for [pry-remote][pry-remote] is included. Ensure pry-remote
-is loaded or required before pry-nav. For example, in a Gemfile:
+To use, invoke pry normally:
+
+```ruby
+def some_method
+  binding.pry          # Execution will stop here.
+  puts 'Hello World'   # Run 'step' or 'next' in the console to move here.
+end
+```
+
+**pry-nav** is not yet thread-safe, so only use in single-threaded environments.
+
+Rudimentary support for [pry-remote][pry-remote] is also included. Ensure
+pry-remote is loaded or required before pry-nav. For example, in a Gemfile:
 
 ```ruby
 gem 'pry'
@@ -15,8 +26,11 @@ gem 'pry-remote'
 gem 'pry-nav'
 ```
 
-Note: In order to get correct flow control, `Pry.start` is overriden. Use at
-your own risk.
+Debugging functionality is implemented through
+[`set_trace_func`][set_trace_func], which imposes a large performance
+penalty. **pry-nav** traces only when necessary, but due to a workaround for a
+[bug in 1.9.2][ruby-bug], the console will feel sluggish. Use 1.9.3 for best
+results and almost no performance penalty.
 
 
 ## Contributing
@@ -31,16 +45,13 @@ file an [issue][issues]. [Project changelog][changelog].
 - [@Mon-Ouie][Mon-Ouie]'s [pry_debug][pry_debug]
 
 
-## TODO
-
-- Thread safety
-
-
-[pry]:          http://pry.github.com
-[pry-remote]:   https://github.com/Mon-Ouie/pry-remote
-[changelog]:    https://github.com/nixme/pry-nav/blob/master/CHANGELOG.md
-[issues]:       https://github.com/nixme/pry-nav/issues
-[pullrequests]: https://github.com/nixme/pry-nav/pulls
-[debug.rb]:     https://github.com/ruby/ruby/blob/trunk/lib/debug.rb
-[Mon-Ouie]:     https://github.com/Mon-Ouie
-[pry_debug]:    https://github.com/Mon-Ouie/pry_debug
+[pry]:            http://pry.github.com
+[pry-remote]:     https://github.com/Mon-Ouie/pry-remote
+[set_trace_func]: http://www.ruby-doc.org/core-1.9.3/Kernel.html#method-i-set_trace_func
+[ruby-bug]:       http://redmine.ruby-lang.org/issues/3921
+[pullrequests]:   https://github.com/nixme/pry-nav/pulls
+[issues]:         https://github.com/nixme/pry-nav/issues
+[changelog]:      https://github.com/nixme/pry-nav/blob/master/CHANGELOG.md
+[debug.rb]:       https://github.com/ruby/ruby/blob/trunk/lib/debug.rb
+[Mon-Ouie]:       https://github.com/Mon-Ouie
+[pry_debug]:      https://github.com/Mon-Ouie/pry_debug
