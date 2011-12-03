@@ -13,6 +13,7 @@ module PryNav
     end
 
     command 'continue', 'Continue program execution and end the Pry session.' do
+      check_file_context
       run 'exit-all'
     end
 

@@ -5,6 +5,8 @@
   anymore.
 * The overriden `Pry.start` now returns the output of the original method, not a
   `PryNav::Tracer` instance.
+* For consistency with the other nav commands, **continue** now checks for a
+  local file context.
 
 
 ## 0.0.3 (2011-12-01)
