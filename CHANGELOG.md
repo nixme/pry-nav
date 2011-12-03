@@ -1,4 +1,4 @@
-## UNRELEASED
+## 0.0.4 (2011-12-03)
 
 * Performance improvement, primarily for 1.9.2: Don't trace unless in a file
   context. `rails console` or standard `pry` shouldn't experience a slowdown
