@@ -1,3 +1,9 @@
+## UNRELEASED
+
+* The overriden `Pry.start` now returns the output of the original method, not a
+  `PryNav::Tracer` instance.
+
+
 ## 0.0.3 (2011-12-01)
 
 * Performance improvement: Don't trace while in the Pry console. Only works in

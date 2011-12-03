@@ -5,7 +5,7 @@ class << Pry
   alias_method :start_existing, :start
 
   def start(target = TOPLEVEL_BINDING, options = {})
-    PryNav::Tracer.new(options) do
+    PryNav::Tracer.new(options).run do
       start_existing(target, options.reject { |k, _| k == :pry_remote })
     end
   end

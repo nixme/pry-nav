@@ -7,8 +7,6 @@ module PryNav
       @frames_when_stepping = nil              # Only break at this frame level
       @frames = 0                              # Traced stack frame level
       @pry_start_options = pry_start_options   # Options to use for Pry.start
-
-      run &block
     end
 
     def run(&block)
