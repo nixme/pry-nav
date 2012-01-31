@@ -2,17 +2,17 @@ require 'pry'
 
 module PryNav
   Commands = Pry::CommandSet.new do
-    command 'step', 'Step execution into the next line or method.' do |steps|
+    block_command 'step', 'Step execution into the next line or method.' do |steps|
       check_file_context
       breakout_navigation :step, steps
     end
 
-    command 'next', 'Execute the next line within the same stack frame.' do |lines|
+    block_command 'next', 'Execute the next line within the same stack frame.' do |lines|
       check_file_context
       breakout_navigation :next, lines
     end
 
-    command 'continue', 'Continue program execution and end the Pry session.' do
+    block_command 'continue', 'Continue program execution and end the Pry session.' do
       check_file_context
       run 'exit-all'
     end
