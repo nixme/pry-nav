@@ -90,7 +90,7 @@ end
 # Ensure cleanup when a program finishes without another break. For example,
 # 'next' on the last line of a program never hits the tracer proc, and thus
 # PryNav::Tracer#run doesn't have a chance to cleanup.
-END {
+at_exit do
   set_trace_func nil
   PryRemote::Server.stop
-}
+end
