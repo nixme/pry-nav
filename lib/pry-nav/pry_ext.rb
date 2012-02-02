@@ -7,7 +7,7 @@ class << Pry
   def start(target = TOPLEVEL_BINDING, options = {})
     old_options = options.reject { |k, _| k == :pry_remote }
 
-    if PryNav.check_file_context(target)
+    if target.is_a?(Binding) && PryNav.check_file_context(target)
       # Wrap the tracer around the usual Pry.start
       PryNav::Tracer.new(options).run do
         start_existing(target, old_options)
