@@ -7,7 +7,7 @@ require 'pry-nav/tracer'
 require 'pry-nav/pry_remote_ext' if defined? PryRemote
 
 module PryNav
-  TRACE_IGNORE_FILES = Dir[File.join(File.dirname(__FILE__), '**', '*.rb')]
+  TRACE_IGNORE_FILES = Dir[File.join(File.dirname(__FILE__), '**', '*.rb')].map { |f| File.expand_path(f) }
 
   extend self
 
