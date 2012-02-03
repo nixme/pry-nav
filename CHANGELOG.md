@@ -1,3 +1,9 @@
+## 0.1.0 (2012-02-02)
+
+* MRI 1.8.7 support
+* Upgrade to Pry 0.9.8
+
+
 ## 0.0.4 (2011-12-03)
 
 * Performance improvement, primarily for 1.9.2: Don't trace unless in a file
