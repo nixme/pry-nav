@@ -11,9 +11,9 @@ module PryNav
 
     def run(&block)
       # For performance, disable any tracers while in the console.
-      # Unfortunately, only works in >= 1.9.3 because of
-      # http://redmine.ruby-lang.org/issues/3921
-      stop if RUBY_VERSION >= '1.9.3'
+      # Unfortunately doesn't work in 1.9.2 because of
+      # http://redmine.ruby-lang.org/issues/3921. Works fine in 1.8.7 and 1.9.3.
+      stop unless RUBY_VERSION == '1.9.2'
 
       return_value = nil
       command = catch(:breakout_nav) do      # Coordinates with PryNav::Commands
@@ -25,7 +25,7 @@ module PryNav
       if process_command(command)
         start
       else
-        stop unless RUBY_VERSION >= '1.9.3'
+        stop if RUBY_VERSION == '1.9.2'
         PryRemote::Server.stop if @pry_start_options[:pry_remote]
       end
 
