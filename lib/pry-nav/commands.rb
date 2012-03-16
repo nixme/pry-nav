@@ -17,10 +17,6 @@ module PryNav
       run 'exit-all'
     end
 
-    alias_command 'n', 'next'
-    alias_command 's', 'step'
-    alias_command 'c', 'continue'
-
     helpers do
       def breakout_navigation(action, times)
         _pry_.binding_stack.clear     # Clear the binding stack.

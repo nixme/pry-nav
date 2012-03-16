@@ -1,3 +1,9 @@
+## UNRELEASED
+
+# Removed single letter aliases for **step**, **next**, and **continue** because
+  of conflicts with common variable names.
+
+
 ## 0.1.0 (2012-02-02)
 
 * MRI 1.8.7 support
