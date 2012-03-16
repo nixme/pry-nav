@@ -26,7 +26,9 @@ module PryNav
         start
       else
         stop if RUBY_VERSION == '1.9.2'
-        PryRemote::Server.stop if @pry_start_options[:pry_remote]
+        if @pry_start_options[:pry_remote] && PryNav.current_remote_server
+          PryNav.current_remote_server.teardown
+        end
       end
 
       return_value

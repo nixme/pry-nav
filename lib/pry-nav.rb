@@ -17,4 +17,7 @@ module PryNav
     file = target.eval('__FILE__')
     file == Pry.eval_path || (file !~ /(\(.*\))|<.*>/ && file != '' && file != '-e')
   end
+
+  # Reference to currently running pry-remote server. Used by the tracer.
+  attr_accessor :current_remote_server
 end

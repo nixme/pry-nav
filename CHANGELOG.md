@@ -2,6 +2,8 @@
 
 # Removed single letter aliases for **step**, **next**, and **continue** because
   of conflicts with common variable names.
+* Update [pry-remote][pry-remote] support for 0.1.1. Older releases of
+  pry-remote no longer supported.
 
 
 ## 0.1.0 (2012-02-02)

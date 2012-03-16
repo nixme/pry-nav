@@ -17,8 +17,9 @@ end
 
 **pry-nav** is not yet thread-safe, so only use in single-threaded environments.
 
-Rudimentary support for [pry-remote][pry-remote] is also included. Ensure
-pry-remote is loaded or required before pry-nav. For example, in a Gemfile:
+Rudimentary support for [pry-remote][pry-remote] (>= 0.1.1) is also included.
+Ensure pry-remote is loaded or required before pry-nav. For example, in a
+Gemfile:
 
 ```ruby
 gem 'pry'
