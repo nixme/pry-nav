@@ -1,4 +1,4 @@
-## UNRELEASED
+## 0.2.0 (2012-02-19)
 
 # Removed single letter aliases for **step**, **next**, and **continue** because
   of conflicts with common variable names.
