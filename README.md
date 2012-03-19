@@ -17,6 +17,9 @@ end
 
 **pry-nav** is not yet thread-safe, so only use in single-threaded environments.
 
+If you get `ArgumentError: uncaught throw :breakout_nav` errors, add `require
+'pry-nav'` before calling `binding.pry`.
+
 Rudimentary support for [pry-remote][pry-remote] (>= 0.1.1) is also included.
 Ensure pry-remote is loaded or required before pry-nav. For example, in a
 Gemfile:
@@ -25,6 +28,14 @@ Gemfile:
 gem 'pry'
 gem 'pry-remote'
 gem 'pry-nav'
+```
+
+Stepping through code often? Add the following shortcuts to `~/.pryrc`:
+
+```ruby
+Pry.commands.alias_command 'c', 'continue'
+Pry.commands.alias_command 's', 'step'
+Pry.commands.alias_command 'n', 'next'
 ```
 
 Debugging functionality is implemented through
