@@ -17,9 +17,6 @@ end
 
 **pry-nav** is not yet thread-safe, so only use in single-threaded environments.
 
-If you get `ArgumentError: uncaught throw :breakout_nav` errors, add `require
-'pry-nav'` before calling `binding.pry`.
-
 Rudimentary support for [pry-remote][pry-remote] (>= 0.1.1) is also included.
 Ensure pry-remote is loaded or required before pry-nav. For example, in a
 Gemfile:
@@ -45,7 +42,11 @@ penalty. **pry-nav** traces only when necessary, but due to a workaround for a
 results and almost no performance penalty.
 
 
-## Contributing
+## Contributors
+
+* Gopal Patel (@nixme)
+* John Mair (@banister)
+* Conrad Irwin (@ConradIrwin)
 
 Patches and bug reports are welcome. Just send a [pull request][pullrequests] or
 file an [issue][issues]. [Project changelog][changelog].

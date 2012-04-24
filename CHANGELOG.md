@@ -1,6 +1,12 @@
+## 0.2.1 (2012-04-24)
+
+* Upgrade to Pry 0.9.9. (@banister)
+* Fix loading issues using new Pry cli.rb convention. No more explicit
+  `require 'pry-nav'` should be necessary. (@banister)
+
 ## 0.2.0 (2012-02-19)
 
-# Removed single letter aliases for **step**, **next**, and **continue** because
+* Removed single letter aliases for **step**, **next**, and **continue** because
   of conflicts with common variable names.
 * Update [pry-remote][pry-remote] support for 0.1.1. Older releases of
   pry-remote no longer supported.
