@@ -1,3 +1,8 @@
+**Notice:** Using MRI 1.9.2+? Check out [**pry-debugger**][pry-debugger].
+Includes the same features as **pry-nav** with faster tracing, breakpoints, and
+other additional capabilities.
+
+
 pry-nav
 =======
 
@@ -58,6 +63,7 @@ file an [issue][issues]. [Project changelog][changelog].
 - [@Mon-Ouie][Mon-Ouie]'s [pry_debug][pry_debug]
 
 
+[pry-debugger]:   https://github.com/nixme/pry-debugger
 [pry]:            http://pry.github.com
 [pry-remote]:     https://github.com/Mon-Ouie/pry-remote
 [set_trace_func]: http://www.ruby-doc.org/core-1.9.3/Kernel.html#method-i-set_trace_func
