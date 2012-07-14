@@ -1,7 +1,8 @@
-**Notice:** Using MRI 1.9.2+? Check out [**pry-debugger**][pry-debugger].
-Includes the same features as **pry-nav** with faster tracing, breakpoints, and
-other additional capabilities.
+### Using MRI 1.9.2+? Switch to [**pry-debugger**][pry-debugger].
 
+Same features as **pry-nav** but with faster tracing, breakpoints, and more.
+
+* * *
 
 pry-nav
 =======
