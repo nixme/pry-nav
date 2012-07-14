@@ -1,3 +1,7 @@
+## 0.2.2 (2012-06-14)
+
+* Upgrade to Pry 0.9.10. (@banister)
+
 ## 0.2.1 (2012-04-24)
 
 * Upgrade to Pry 0.9.9. (@banister)
