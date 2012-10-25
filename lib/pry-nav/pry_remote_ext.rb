@@ -21,11 +21,12 @@ module PryRemote
     end
 
     # Override to reset our saved global current server session.
-    alias_method :teardown_existing, :teardown
-    def teardown
-      teardown_existing
+    alias_method :teardown_without_pry_nav, :teardown
+    def teardown_with_pry_nav
+      teardown_without_pry_nav
       PryNav.current_remote_server = nil
     end
+    alias_method :teardown, :teardown_with_pry_nav
   end
 end
 
