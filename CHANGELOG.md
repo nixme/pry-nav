@@ -1,4 +1,4 @@
-## 0.2.3 (2012-12-16)
+## 0.2.3 (2012-12-26)
 
 * Safer `alias_method_chain`-style patching of `Pry.start` and
   `PryRemote::Server#teardown`. (@benizi)
