@@ -1,3 +1,8 @@
+## 0.2.3 (2012-12-16)
+
+* Safer `alias_method_chain`-style patching of `Pry.start` and
+  `PryRemote::Server#teardown`. (@benizi)
+
 ## 0.2.2 (2012-06-14)
 
 * Upgrade to Pry 0.9.10. (@banister)

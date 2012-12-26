@@ -53,6 +53,7 @@ results and almost no performance penalty.
 * Gopal Patel (@nixme)
 * John Mair (@banister)
 * Conrad Irwin (@ConradIrwin)
+* Benjamin R. Haskell (@benizi)
 
 Patches and bug reports are welcome. Just send a [pull request][pullrequests] or
 file an [issue][issues]. [Project changelog][changelog].
