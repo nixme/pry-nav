@@ -4,7 +4,7 @@ Same features as **pry-nav** but with faster tracing, breakpoints, and more.
 
 * * *
 
-pry-nav
+pry-nav [![Bitdeli Badge](https://d2weczhvl823v0.cloudfront.net/nixme/pry-nav/trend.png)](https://bitdeli.com/free "Bitdeli Badge")
 =======
 
 _Simple execution control in Pry_
