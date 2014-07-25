@@ -1,4 +1,5 @@
 ### Using MRI 1.9.2+? Switch to [**pry-debugger**][pry-debugger].
+### Using MRI 2+? Switch to [**pry-byebug**][pry-byebug].
 
 Same features as **pry-nav** but with faster tracing, breakpoints, and more.
 
@@ -54,6 +55,7 @@ results and almost no performance penalty.
 * John Mair (@banister)
 * Conrad Irwin (@ConradIrwin)
 * Benjamin R. Haskell (@benizi)
+* Jason R. Clark (@jasonrclark)
 
 Patches and bug reports are welcome. Just send a [pull request][pullrequests] or
 file an [issue][issues]. [Project changelog][changelog].
@@ -76,3 +78,4 @@ file an [issue][issues]. [Project changelog][changelog].
 [debug.rb]:       https://github.com/ruby/ruby/blob/trunk/lib/debug.rb
 [Mon-Ouie]:       https://github.com/Mon-Ouie
 [pry_debug]:      https://github.com/Mon-Ouie/pry_debug
+[pry-byebug]:     https://github.com/deivid-rodriguez/pry-byebug

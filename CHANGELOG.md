@@ -1,3 +1,7 @@
+## 0.2.4 (2014-06-25)
+
+* Support Pry 0.10
+
 ## 0.2.3 (2012-12-26)
 
 * Safer `alias_method_chain`-style patching of `Pry.start` and
