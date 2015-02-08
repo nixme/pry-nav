@@ -3,6 +3,13 @@
 
 Same features as **pry-nav** but with faster tracing, breakpoints, and more.
 
+### Using JRuby?
+Include `-Xcext.enabled=true` and `--debug` in your `JRUBY_OPTS`. For example you might have this in your `~/.bashrc` or `~/.bash_profile`:
+
+```bash
+export JRUBY_OPTS="-Xcext.enabled=true --debug"
+```
+
 * * *
 
 pry-nav [![Bitdeli Badge](https://d2weczhvl823v0.cloudfront.net/nixme/pry-nav/trend.png)](https://bitdeli.com/free "Bitdeli Badge")
