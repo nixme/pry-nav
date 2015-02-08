@@ -10,6 +10,8 @@ Include `-Xcext.enabled=true` and `--debug` in your `JRUBY_OPTS`. For example yo
 export JRUBY_OPTS="-Xcext.enabled=true --debug"
 ```
 
+Adding these flags isn't required, but avoiding them may mean your `next` commands function like `step`s. See [this issue](https://github.com/nixme/pry-nav/issues/19) for more discussion.
+
 * * *
 
 pry-nav [![Bitdeli Badge](https://d2weczhvl823v0.cloudfront.net/nixme/pry-nav/trend.png)](https://bitdeli.com/free "Bitdeli Badge")
