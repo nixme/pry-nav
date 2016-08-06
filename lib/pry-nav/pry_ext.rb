@@ -1,4 +1,4 @@
-require 'pry'
+require 'pry' unless defined? Pry
 require 'pry-nav/tracer'
 
 class << Pry

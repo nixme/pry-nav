@@ -1,3 +1,4 @@
+require 'pry' unless defined? Pry
 require 'pry-remote'
 
 module PryRemote
