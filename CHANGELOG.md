@@ -1,6 +1,7 @@
 ## UNRELEASED
 
 * Fix circular require warning.
+* Drop support for ruby < 2.1.
 
 ## 0.2.4 (2014-06-25)
 
