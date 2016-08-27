@@ -2,7 +2,7 @@ require 'pry' unless defined? Pry
 require 'pry-nav/tracer'
 
 class << Pry
-  alias_method :start_without_pry_nav, :start
+  alias start_without_pry_nav start
 
   def start_with_pry_nav(target = TOPLEVEL_BINDING, options = {})
     old_options = options.reject { |k, _| k == :pry_remote }
@@ -18,5 +18,5 @@ class << Pry
     end
   end
 
-  alias_method :start, :start_with_pry_nav
+  alias start start_with_pry_nav
 end
