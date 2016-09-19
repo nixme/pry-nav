@@ -1,8 +1,8 @@
+### Using MRI? We recommend [**pry-byebug**][pry-byebug] instead!
+
 # pry-nav
 
 _A simple execution control add-on for [Pry][pry]._
-
-Using MRI? We recommend [`pry-byebug`][pry-byebug] instead!
 
 Compatible with ![JRuby](https://raw.githubusercontent.com/jruby/collateral/master/logos/PNGs/logo-with-type/full-color/jruby-logo-logo-with-type-small.png) >= 9.1.3.0.
 
