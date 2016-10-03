@@ -1,3 +1,7 @@
+## UNRELEASED
+
+* Fix circular require warning.
+
 ## 0.2.4 (2014-06-25)
 
 * Support Pry 0.10
