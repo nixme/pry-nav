@@ -1,6 +1,7 @@
-## UNRELEASED
+## 0.3.0 (2019-04-16)
 
 * Fix circular require warning.
+* Support Pry 0.11 & 0.12
 
 ## 0.2.4 (2014-06-25)
 
