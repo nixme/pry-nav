@@ -20,10 +20,11 @@ module PryNav
     helpers do
       def breakout_navigation(action, times)
         _pry_.binding_stack.clear     # Clear the binding stack.
-        throw :breakout_nav, {        # Break out of the REPL loop and
-          :action => action,          #   signal the tracer.
-          :times =>  times
-        }
+        throw(
+          :breakout_nav,              # Break out of the REPL loop and
+          action: action,             #   signal the tracer.
+          times: times,
+        )
       end
 
       # Ensures that a command is executed in a local file context.

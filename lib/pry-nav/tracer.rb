@@ -2,18 +2,16 @@ require 'pry' unless defined? Pry
 
 module PryNav
   class Tracer
-    def initialize(pry_start_options = {}, &block)
+    def initialize(pry_start_options = {})
       @step_in_lines = -1                      # Break after this many lines
       @frames_when_stepping = nil              # Only break at this frame level
       @frames = 0                              # Traced stack frame level
       @pry_start_options = pry_start_options   # Options to use for Pry.start
     end
 
-    def run(&block)
+    def run
       # For performance, disable any tracers while in the console.
-      # Unfortunately doesn't work in 1.9.2 because of
-      # http://redmine.ruby-lang.org/issues/3921. Works fine in 1.8.7 and 1.9.3.
-      stop unless RUBY_VERSION == '1.9.2'
+      stop
 
       return_value = nil
       command = catch(:breakout_nav) do      # Coordinates with PryNav::Commands
@@ -25,7 +23,6 @@ module PryNav
       if process_command(command)
         start
       else
-        stop if RUBY_VERSION == '1.9.2'
         if @pry_start_options[:pry_remote] && PryNav.current_remote_server
           PryNav.current_remote_server.teardown
         end
@@ -60,10 +57,9 @@ module PryNav
       end
     end
 
+    private
 
-   private
-
-    def tracer(event, file, line, id, binding, klass)
+    def tracer(event, file, _line, _id, binding, _klass)
       # Ignore traces inside pry-nav code
       return if file && TRACE_IGNORE_FILES.include?(File.expand_path(file))
 
@@ -81,7 +77,7 @@ module PryNav
         end
 
         # Break on this line?
-        Pry.start(binding, @pry_start_options) if @step_in_lines == 0
+        Pry.start(binding, @pry_start_options) if @step_in_lines.zero?
 
       when 'call', 'class'
         @frames += 1         # Track entering a frame

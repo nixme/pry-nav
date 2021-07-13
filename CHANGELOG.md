@@ -1,3 +1,6 @@
+## 1.0.0
+* Drop support for ruby < 2.1.
+
 ## 0.3.0 (2019-04-16)
 
 * Fix circular require warning.
