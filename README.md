@@ -4,7 +4,7 @@
 
 _A simple execution control add-on for [Pry][pry]._
 
-Compatible with ![JRuby](https://raw.githubusercontent.com/jruby/collateral/master/logos/PNGs/logo-with-type/full-color/jruby-logo-logo-with-type-small.png) >= 9.1.3.0.
+Compatible with MRI >= 1.8.7, ![JRuby](https://raw.githubusercontent.com/jruby/collateral/master/logos/PNGs/logo-with-type/full-color/jruby-logo-logo-with-type-small.png) >= 9.1.3.0.
 
 Teaches [Pry][pry] about `step`, `next`, and `continue` to create a simple
 debugger.
