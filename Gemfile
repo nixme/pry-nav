@@ -1,4 +1,7 @@
 source 'https://rubygems.org'
-
-# Specify your gem's dependencies in pry-nav.gemspec
 gemspec
+
+gem "test-unit"
+
+gem "pry", "~> 0.14.1"
+gem "pry-remote"
