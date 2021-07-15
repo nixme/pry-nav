@@ -55,6 +55,7 @@ penalty.
 * Benjamin R. Haskell ([@benizi](https://github.com/benizi))
 * Jason R. Clark ([@jasonrclark](https://github.com/jasonrclark))
 * Ivo Anjo ([@ivoanjo](https://github.com/ivoanjo))
+* Michael Bianco ([@iloveitaly](https://github.com/iloveitaly))
 
 Patches and bug reports are welcome. Just send a [pull request][pullrequests] or
 file an [issue][issues]. [Project changelog][changelog].
