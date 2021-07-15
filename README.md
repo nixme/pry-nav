@@ -1,6 +1,6 @@
 ### Using MRI? We recommend [**pry-byebug**][pry-byebug] instead!
 
-# pry-nav
+# pry-nav [![Ruby](https://github.com/nixme/pry-nav/actions/workflows/main.yml/badge.svg)](https://github.com/nixme/pry-nav/actions/workflows/main.yml)
 
 _A simple execution control add-on for [Pry][pry]._
 
