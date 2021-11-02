@@ -4,6 +4,7 @@
 * Support Pry 0.14
 * Adding tests
 * Fix warning on ruby 2.7
+
 ## 0.3.0 (2019-04-16)
 
 * Fix circular require warning.

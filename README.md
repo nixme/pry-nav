@@ -1,10 +1,10 @@
-### Using MRI? We recommend [**pry-byebug**][pry-byebug] instead!
+### Using MRI? We recommend [**break**][break] or [**pry-byebug**][pry-byebug] instead!
 
 # pry-nav [![Ruby](https://github.com/nixme/pry-nav/actions/workflows/main.yml/badge.svg)](https://github.com/nixme/pry-nav/actions/workflows/main.yml)
 
 _A simple execution control add-on for [Pry][pry]._
 
-Compatible with MRI >= 1.8.7, ![JRuby](https://raw.githubusercontent.com/jruby/collateral/master/logos/PNGs/logo-with-type/full-color/jruby-logo-logo-with-type-small.png) >= 9.1.3.0.
+Compatible with MRI >= 2.1.0, JRuby >= 9.1.3.0.
 
 Teaches [Pry][pry] about `step`, `next`, and `continue` to create a simple
 debugger.
@@ -75,3 +75,4 @@ file an [issue][issues]. [Project changelog][changelog].
 [Mon-Ouie]:       https://github.com/Mon-Ouie
 [pry_debug]:      https://github.com/Mon-Ouie/pry_debug
 [pry-byebug]:     https://github.com/deivid-rodriguez/pry-byebug
+[break]:          https://github.com/gsamokovarov/break
