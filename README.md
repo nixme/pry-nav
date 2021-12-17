@@ -1,5 +1,3 @@
-### Using MRI? We recommend [**break**][break] or [**pry-byebug**][pry-byebug] instead!
-
 # pry-nav [![Ruby](https://github.com/nixme/pry-nav/actions/workflows/main.yml/badge.svg)](https://github.com/nixme/pry-nav/actions/workflows/main.yml)
 
 _A simple execution control add-on for [Pry][pry]._
@@ -46,6 +44,11 @@ Pry.commands.alias_command 'n', 'next'
 Please note that debugging functionality is implemented through
 [`set_trace_func`][set_trace_func], which imposes a large performance
 penalty.
+
+## Alternatives
+_These work with MRI and pry_
+* [**break**][break]
+* [**pry-byebug**][pry-byebug]
 
 ## Contributors
 
