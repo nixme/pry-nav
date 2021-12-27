@@ -68,7 +68,7 @@ file an [issue][issues]. [Project changelog][changelog].
 * Ruby stdlib's [debug.rb][debug.rb]
 * [@Mon-Ouie][Mon-Ouie]'s [pry_debug][pry_debug]
 
-[pry]:            http://pryrepl.org/
+[pry]:            https://pry.github.io/
 [pry-remote]:     https://github.com/Mon-Ouie/pry-remote
 [set_trace_func]: http://www.ruby-doc.org/core-1.9.3/Kernel.html#method-i-set_trace_func
 [pullrequests]:   https://github.com/nixme/pry-nav/pulls
